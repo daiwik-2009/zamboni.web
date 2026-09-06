@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZamboniAI - AI Hockey Coaching & Skill Development Academy</title>
+    <title>ZamboniAI - Premium AI Hockey Coaching & Skill Academy</title>
     <style>
         :root {
             --primary: #00d2ff;
@@ -15,7 +15,6 @@
             --text-muted: #94a9be;
             --success: #00ff87;
             --error: #ff3366;
-            --border-glow: rgba(0, 210, 255, 0.25);
         }
 
         * {
@@ -105,11 +104,12 @@
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
             font-size: 0.9rem;
+            gap: 0.5rem;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            color: #000;
+            color: #000000;
             border: none;
             box-shadow: 0 4px 20px rgba(0, 210, 255, 0.35);
         }
@@ -250,7 +250,6 @@
             background: radial-gradient(transparent, rgba(0,0,0,0.4));
         }
 
-        /* Custom Scrollbar for Chat */
         .chat-display::-webkit-scrollbar {
             width: 4px;
         }
@@ -318,7 +317,7 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            color: #000;
+            color: #000000;
             transition: background 0.2s;
         }
 
@@ -356,3 +355,5 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
