@@ -26,38 +26,35 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(0, 210, 255, 0.05) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(0, 255, 135, 0.03) 0px, transparent 50%);
-        }
-
-        /* Tactical Ice Grid Overlay */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: -1;
-            pointer-events: none;
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background: rgba(10, 17, 24, 0.8);
+            padding: 15px 8%;
+            background: rgba(10, 17, 24, 0.85);
             backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+            border: 1px solid rgba(0, 210, 255, 0.4);
+            object-fit: cover;
         }
 
         .logo {
@@ -74,17 +71,23 @@
             color: var(--primary-neon);
         }
 
+        /* Hero Showcase Block with Panoramic Background */
         .hero {
-            padding: 160px 8% 100px;
+            padding: 200px 8% 120px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             position: relative;
+            background: linear-gradient(180deg, rgba(10, 17, 24, 0.4) 0%, rgba(10, 17, 24, 0.95) 80%, var(--bg-dark) 100%), 
+                        url('image_2QAPqy.png') no-repeat center center;
+            background-size: cover;
+            min-height: 90vh;
+            justify-content: center;
         }
 
         .hero-tag {
-            background: rgba(0, 210, 255, 0.1);
+            background: rgba(0, 210, 255, 0.15);
             border: 1px solid var(--primary-neon);
             color: var(--primary-neon);
             padding: 6px 16px;
@@ -94,17 +97,19 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 24px;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+            backdrop-filter: blur(4px);
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: -1px;
             line-height: 1.1;
             margin-bottom: 20px;
             max-width: 900px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
         }
 
         h1 span {
@@ -114,11 +119,12 @@
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 650px;
+            font-size: 1.35rem;
+            color: #e2f0fc;
+            max-width: 700px;
             margin-bottom: 40px;
             line-height: 1.6;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
         }
 
         .btn-container {
@@ -145,34 +151,37 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-neon), #00a2cc);
             color: #000;
-            box-shadow: 0 4px 20px rgba(0, 210, 255, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 210, 255, 0.5);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 210, 255, 0.6);
+            box-shadow: 0 6px 25px rgba(0, 210, 255, 0.7);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: rgba(10, 17, 24, 0.6);
             color: var(--text-main);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(4px);
         }
 
         .btn-secondary:hover {
             border-color: var(--text-main);
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .features {
-            padding: 60px 8% 100px;
+            padding: 40px 8% 100px;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 100fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
@@ -227,20 +236,32 @@
         }
 
         .cta-section {
-            padding: 100px 8%;
-            background: linear-gradient(180deg, transparent, rgba(0, 210, 255, 0.05));
+            padding: 80px 8% 120px;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            background: linear-gradient(180deg, transparent, rgba(0, 210, 255, 0.02));
         }
 
         .cta-box {
             max-width: 800px;
             margin: 0 auto;
-            background: radial-gradient(circle at center, rgba(18, 30, 42, 0.6) 0%, var(--bg-card) 100%);
+            background: linear-gradient(135deg, var(--bg-card) 0%, #0d1722 100%);
             border: 1px solid var(--border-glow);
             padding: 60px 40px;
             border-radius: 16px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cta-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.3);
+            border: 1px solid rgba(0, 210, 255, 0.5);
+            object-fit: cover;
         }
 
         .cta-box h2 {
@@ -253,6 +274,7 @@
             color: var(--text-muted);
             margin-bottom: 32px;
             font-size: 18px;
+            max-width: 550px;
         }
 
         footer {
@@ -261,26 +283,32 @@
             text-align: center;
             font-size: 14px;
             color: var(--text-muted);
+            background: #060b10;
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .cta-box h2 { font-size: 2rem; }
-            .btn-container { flex-direction: column; }
+            h1 { font-size: 2.4rem; }
+            .cta-box h2 { font-size: 1.9rem; }
+            .btn-container { flex-direction: column; width: 100%; }
+            .btn { width: 100%; }
+            .hero { background-position: 35% center; padding-top: 140px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Zamboni<span>AI</span></div>
+        <div class="brand-container">
+            <img src="image_xO6kvm.png" alt="ZamboniAI App Icon" class="header-icon">
+            <div class="logo">Zamboni<span>AI</span></div>
+        </div>
         <a href="https://play.google.com/store/apps/details?id=com.zamboni.ai" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 14px;">Get App</a>
     </header>
 
     <section class="hero">
         <div class="hero-tag">AI Hockey Coaching</div>
         <h1>Elevate Your Game With <span>Data-Driven Analysis</span></h1>
-        <p class="hero-subtitle">Step onto the ice with the ultimate AI training assistant. Maximize your skill development, optimize skating lines, and track real-time metrics seamlessly.</p>
+        <p class="hero-subtitle">Step onto the ice with the ultimate AI training assistant. Maximize your skill development, track real-time skating speeds, and get instantaneous feedback loops.</p>
         <div class="btn-container">
             <a href="https://play.google.com/store/apps/details?id=com.zamboni.ai" target="_blank" class="btn btn-primary">
                 Download on Google Play
@@ -298,18 +326,3 @@
             </div>
             <div class="card">
                 <div class="card-icon">⚡</div>
-                <h3>Skill Development</h3>
-                <p>Unlock custom generative training sets engineered dynamically around your historical output limitations to accelerate real execution growth.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">⏱️</div>
-                <h3>Real-Time Feedback</h3>
-                <p>Receive immediate audio cues and graphical metrics breakdowns overlaying your training vectors instantly while inside the training window.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="cta-box">
-            <h2>Ready to dominate the ice?</h2>
-            <p>Get instant access to pro-tier coaching modules right from your smartphone device.</p>
