@@ -28,6 +28,20 @@
             overflow-x: hidden;
         }
 
+        /* Tactical Ice Grid Overlay */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
         header {
             display: flex;
             justify-content: space-between;
@@ -84,6 +98,7 @@
             background-size: cover;
             min-height: 90vh;
             justify-content: center;
+            z-index: 2;
         }
 
         .hero-tag {
@@ -239,6 +254,8 @@
             padding: 80px 8% 120px;
             text-align: center;
             background: linear-gradient(180deg, transparent, rgba(0, 210, 255, 0.02));
+            position: relative;
+            z-index: 2;
         }
 
         .cta-box {
@@ -284,6 +301,8 @@
             font-size: 14px;
             color: var(--text-muted);
             background: #060b10;
+            position: relative;
+            z-index: 2;
         }
 
         @media (max-width: 768px) {
@@ -297,6 +316,8 @@
 </head>
 <body>
 
+    <div class="grid-overlay"></div>
+
     <header>
         <div class="brand-container">
             <img src="image_xO6kvm.png" alt="ZamboniAI App Icon" class="header-icon">
@@ -308,21 +329,5 @@
     <section class="hero">
         <div class="hero-tag">AI Hockey Coaching</div>
         <h1>Elevate Your Game With <span>Data-Driven Analysis</span></h1>
-        <p class="hero-subtitle">Step onto the ice with the ultimate AI training assistant. Maximize your skill development, track real-time skating speeds, and get instantaneous feedback loops.</p>
+        <p class="hero-subtitle">Step onto the ice with the ultimate AI training assistant. Maximize your skill development, optimize skating lines, and track real-time metrics seamlessly.</p>
         <div class="btn-container">
-            <a href="https://play.google.com/store/apps/details?id=com.zamboni.ai" target="_blank" class="btn btn-primary">
-                Download on Google Play
-            </a>
-            <a href="#features" class="btn btn-secondary">Explore Features</a>
-        </div>
-    </section>
-
-    <section class="features" id="features">
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">📊</div>
-                <h3>Data-Driven Analysis</h3>
-                <p>Advanced mapping algorithms break down your positioning, puck handling metrics, and physical distribution trends on the rink floor.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">⚡</div>
