@@ -3,167 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZamboniAI - AI Ice Hockey Coaching & Interactive Skill Academy</title>
-</head>
-<body> <!-- ◄ OPENING BODY TAG IS CLEARLY HERE NOW -->
+    <title>ZamboniAI - AI Hockey Coaching & Skill Development Academy</title>
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --primary-dark: #0072ff;
+            --bg-dark: #060b11;
+            --bg-card: #0f1922;
+            --bg-accent: #162535;
+            --text-light: #ffffff;
+            --text-muted: #94a9be;
+            --success: #00ff87;
+            --error: #ff3366;
+            --border-glow: rgba(0, 210, 255, 0.25);
+        }
 
-    <!-- Navigation Header -->
-    <header>
-        <a href="#" class="logo">⚡ Zamboni<span>AI</span></a>
-        <nav>
-            <a href="#features" class="active">Features</a>
-            <a href="#academy">Training Modules</a>
-            <a href="#download" class="btn btn-secondary">Get App</a>
-        </nav>
-    </header>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-    <!-- Hero Section with Chatbot Coach Simulation -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-tagline">Pro Hockey Coaching In Your Pocket</div>
-            <h1>Elevate Your Game With <span>ZamboniAI</span></h1>
-            <p>Master positioning, sharpen mechanics, and dominate the ice. Get instant real-time advice from your AI Chatbot Coach or dive into structured training modules built to advance your hockey IQ.</p>
-            <div class="cta-buttons">
-                <a href="#academy" class="btn btn-primary">Explore Modules</a>
-                <a href="#features" class="btn btn-secondary">See How it Works</a>
-            </div>
-        </div>
+        html {
+            scroll-behavior: smooth;
+        }
 
-        <!-- Phone UI Mockup Interactive Element -->
-        <div class="hero-image">
-            <div class="mockup-container">
-                <div class="app-screen">
-                    <div class="app-header">Coach Zamboni AI</div>
-                    <div class="app-content" id="chatContainer">
-                        <div class="chat-bubble chat-coach">
-                            Hey there! Ready to level up your shift? Ask me anything about rules, game knowledge, positioning, or training regimens.
-                        </div>
-                        <div class="chat-bubble chat-user">
-                            How should a winger play during a defensive zone breakout?
-                        </div>
-                        <div class="chat-bubble chat-coach">
-                            As a winger during a breakout, collapse down toward the hash marks along the boards. Keep your body open facing the play to receive the puck, then make a clean pass or chip it out past the opposing defenseman!
-                        </div>
-                    </div>
-                    <div class="app-input-area">
-                        <input type="text" class="app-input" id="chatInput" placeholder="Ask about positions, strategies, training...">
-                        <button class="app-send" onclick="sendMockMessage()">➔</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    <!-- Core App Features -->
-    <section id="features">
-        <div class="section-header">
-            <h2>Built For Absolute Rink Domination</h2>
-            <p>Whether you're just learning to step onto the ice or polishing your junior league team strategy, ZamboniAI brings complete hockey knowledge straight to you.</p>
-        </div>
+        /* --- Header Navigation --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 5%;
+            background: rgba(6, 11, 17, 0.95);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(0, 210, 255, 0.15);
+        }
 
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">💬</div>
-                <h3>24/7 Chatbot Coach</h3>
-                <p>Instant answers to deep technical queries. Ask specific team structural questions, rules inquiries, positions rules, or ask for targeted off-ice conditioning methods.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎓</div>
-                <h3>Academy Style Progress</h3>
-                <p>Structured, bite-sized curriculum designed exactly like world-class learning platforms to teach step-by-step mechanical fundamentals for skating, shooting, and stickhandling.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">✏️</div>
-                <h3>Knowledge Checks</h3>
-                <p>Interactive quizzes validating your understanding of specific angles, mechanical weight shifts, and position tactics right after each unit.</p>
-            </div>
-        </div>
-    </section>
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
 
-    <!-- Interactive Academy Preview -->
-    <section id="academy">
-        <div class="section-header">
-            <h2>Khan-Academy Style Modules</h2>
-            <p>Preview our three essential core modules built to take your physical mechanics and tactical hockey strategy to the next tier.</p>
-        </div>
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
-        <div class="academy-container">
-            <div class="academy-tabs">
-                <button class="tab-btn active" onclick="switchTab(event, 'skating')">1. Skating Module</button>
-                <button class="tab-btn" onclick="switchTab(event, 'stickhandling')">2. Stickhandling Module</button>
-                <button class="tab-btn" onclick="switchTab(event, 'shooting')">3. Shooting Module</button>
-            </div>
+        .logo-text span {
+            color: var(--primary);
+            text-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+        }
 
-            <!-- Skating Panel -->
-            <div id="skating" class="panel-content active">
-                <div class="lesson-header">
-                    <span class="lesson-badge">Skating Unit 2: Edge Work Control</span>
-                    <span>Est. Time: 15 mins</span>
-                </div>
-                <div class="lesson-content">
-                    <h3>Mastering the Inside Edge Cut</h3>
-                    <p>Powerful skating relies heavily on maximizing your blade contact. For a sharp inside edge turn, lower your center of gravity by flexing your knees over your toes. Push through the heel of your inside foot while anchoring the weight on your core to initiate a seamless pivot direction swap without shedding momentum.</p>
-                    
-                    <div class="quiz-box">
-                        <div class="quiz-title">💡 General Knowledge Quiz: Where should your center of gravity be for maximum stability during a sharp edge turn?</div>
-                        <div class="quiz-options">
-                            <div class="quiz-option" onclick="checkAnswer(this, false)">Standing tall with straight legs</div>
-                            <div class="quiz-option" onclick="checkAnswer(this, true)">Lowered, with deep knee flex over your toes</div>
-                            <div class="quiz-option" onclick="checkAnswer(this, false)">Leaning backward on your heels entirely</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
 
-            <!-- Stickhandling Panel -->
-            <div id="stickhandling" class="panel-content">
-                <div class="lesson-header">
-                    <span class="lesson-badge">Stickhandling Unit 4: Puck Mechanics</span>
-                    <span>Est. Time: 12 mins</span>
-                </div>
-                <div class="lesson-content">
-                    <h3>The Top Hand Expansion Sweep</h3>
-                    <p>Your top hand on the stick controls the angle and rotational dexterity of your blade, while the bottom hand acts primarily as a loose guide support stabilizer. Rolling your top wrist smoothly allows you to cushion the puck softly on both the forehand and backhand sides without making audible tapping sounds against the ice surface.</p>
-                    
-                    <div class="quiz-box">
-                        <div class="quiz-title">💡 General Knowledge Quiz: Which hand is primarily responsible for rolling the stick blade face closed or open?</div>
-                        <div class="quiz-options">
-                            <div class="quiz-option" onclick="checkAnswer(this, true)">Your top hand on the stick grip knob</div>
-                            <div class="quiz-option" onclick="checkAnswer(this, false)">Your bottom hand halfway down the shaft</div>
-                            <div class="quiz-option" onclick="checkAnswer(this, false)">Both hands apply completely equal twisting tension</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
 
-            <!-- Shooting Panel -->
-            <div id="shooting" class="panel-content">
-                <div class="lesson-header">
-                    <span class="lesson-badge">Shooting Unit 1: Wrist Shot Velocity</span>
-                    <span>Est. Time: 18 mins</span>
-                </div>
-                <div class="lesson-content">
-                    <h3>Flex Loading and Downward Force</h3>
-                    <p>Modern composite sticks are designed to act like a dynamic spring catapult system. To generate high velocity on a wrist shot, don't just sweep the puck forward horizontally. Press your weight downward directly into the ice shaft slightly *before* making contact with the puck to load flex potential energy into the stick frame.</p>
-                    
-                    <div class="quiz-box">
-                        <div class="quiz-title">💡 General Knowledge Quiz: How do you maximize power using a composite hockey stick's design parameters?</div>
-                        <div class="quiz-options">
-                            <div class="quiz-option" onclick="checkAnswer(this, false)">By using only your arms to swing like a golf club</div>
-                            <div class="quiz-option" onclick="checkAnswer(this, false)">By keeping the stick perfectly vertical without bending</div>
-                            <div class="quiz-option" onclick="checkAnswer(this, true)">By driving weight down into the shaft to flex the stick</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
 
-    <!-- Footer Area -->
-    <footer>
-        <p>© 2026 ZamboniAI App Inc. All rights reserved. Zamboni® is a registered trademark of Frank J. Zamboni & Co., Inc.</p>
-    </footer>
+        /* --- Buttons --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 2rem;
+            border-radius: 6px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
 
-    <!-- Interactive Script Mechanics -->
-    <script>
-        function switchTab(evt, moduleName) {
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: #000;
+            border: none;
+            box-shadow: 0 4px 20px rgba(0, 210, 255, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 210, 255, 0.6);
+        }
+
+        .btn-secondary {
+            border: 2px solid rgba(0, 210, 255, 0.4);
+            color: var(--primary);
+            background: rgba(0, 210, 255, 0.03);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 210, 255, 0.1);
+            border-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8rem 5% 4rem;
+            background: 
+                radial-gradient(circle at 75% 30%, rgba(0, 114, 255, 0.2), transparent 55%),
+                radial-gradient(circle at 20% 70%, rgba(0, 210, 255, 0.08), transparent 45%),
+                linear-gradient(180deg, rgba(6, 11, 17, 0.4) 0%, var(--bg-dark) 100%);
+            gap: 4rem;
+        }
+
+        .hero-content {
+            flex: 1.2;
+            max-width: 650px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 210, 255, 0.1);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #ffffff 40%, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        /* --- Phone Simulation Layout --- */
+        .hero-interface {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-frame {
+            width: 340px;
+            height: 680px;
+            background: #000000;
+            border: 11px solid #1c2a38;
+            border-radius: 36px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.8), 
+                0 0 40px rgba(0, 210, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-top-bar {
+            background: var(--bg-card);
+            padding: 1.25rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 210, 255, 0.15);
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .app-top-bar::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px var(--success);
+        }
+
+        .chat-display {
+            flex: 1;
+            padding: 1.25rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: radial-gradient(transparent, rgba(0,0,0,0.4));
+        }
+
+        /* Custom Scrollbar for Chat */
+        .chat-display::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-display::-webkit-scrollbar-thumb {
+            background: rgba(0, 210, 255, 0.2);
+            border-radius: 2px;
+        }
+
+        .bubble {
+            padding: 0.85rem 1.1rem;
+            border-radius: 12px;
+            max-width: 88%;
+            font-size: 0.88rem;
+            line-height: 1.4;
+            animation: bubblePop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .coach-bubble {
+            background: var(--bg-card);
+            color: var(--text-light);
+            border-bottom-left-radius: 2px;
+            align-self: flex-start;
+            border-left: 3px solid var(--primary);
+        }
+
+        .user-bubble {
+            background: var(--primary-dark);
+            color: #ffffff;
+            border-bottom-right-radius: 2px;
+            align-self: flex-end;
+        }
+
+        .app-input-strip {
+            padding: 1rem;
+            background: var(--bg-card);
+            border-top: 1px solid rgba(0, 210, 255, 0.15);
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .app-field {
+            flex: 1;
+            background: rgba(6, 11, 17, 0.6);
+            border: 1px solid rgba(0, 210, 255, 0.25);
+            border-radius: 6px;
+            padding: 0.65rem 1rem;
+            color: #ffffff;
+            font-size: 0.85rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .app-field:focus {
+            border-color: var(--primary);
+        }
+
+        .app-submit {
+            background: var(--primary);
+            border: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000;
+            transition: background 0.2s;
+        }
+
+        .app-submit:hover {
+            background: #ffffff;
+        }
+
+        /* --- Section Configurations --- */
+        section {
+            padding: 7rem 5%;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 4.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+        }
+
+        /* --- Grid System --- */
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
