@@ -86,15 +86,12 @@
         }
 
         .hero {
-            padding: 200px 8% 120px;
+            padding: 180px 8% 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             position: relative;
-            background: linear-gradient(180deg, rgba(10, 17, 24, 0.4) 0%, rgba(10, 17, 24, 0.95) 85%, var(--bg-dark) 100%), 
-                        url('banner.png') no-repeat center center;
-            background-size: cover;
         }
 
         .hero-tag {
@@ -119,7 +116,6 @@
             line-height: 1.1;
             margin-bottom: 20px;
             max-width: 900px;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
         }
 
         h1 span {
@@ -130,11 +126,10 @@
 
         .hero-subtitle {
             font-size: 1.25rem;
-            color: var(--text-main);
+            color: var(--text-muted);
             max-width: 650px;
             margin-bottom: 40px;
             line-height: 1.6;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
         }
 
         .btn-container {
@@ -181,8 +176,26 @@
             background: rgba(255, 255, 255, 0.05);
         }
 
+        /* Dedicated Banner Section */
+        .banner-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 8%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .banner-img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 210, 255, 0.1);
+        }
+
         .features {
-            padding: 60px 8% 100px;
+            padding: 20px 8% 100px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -312,16 +325,11 @@
 
     <section class="hero">
         <div class="hero-tag">AI Hockey Coaching</div>
-        <h1>Elevate Your Game With <span>Data-Driven Analysis</span></h1>
-        <p class="hero-subtitle">Step onto the ice with the ultimate AI training assistant. Maximize your skill development, optimize skating lines, and track real-time metrics seamlessly.</p>
+        <h1>Elevate Your Game With <span>Your AI Chatbot Coach</span></h1>
+        <p class="hero-subtitle">Step onto the ice with the ultimate AI training assistant. Maximize your skill development, optimize skating lines, and receive instantaneous coaching chats seamlessly.</p>
         <div class="btn-container">
             <a href="https://play.google.com/store/apps/details?id=com.zamboni.ai" target="_blank" class="btn btn-primary"> Download on Google Play </a>
             <a href="#features" class="btn btn-secondary">Explore Features</a>
         </div>
     </section>
 
-    <section class="features" id="features">
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">📊</div>
-                <h3>Data-Driven Analysis</h3>
