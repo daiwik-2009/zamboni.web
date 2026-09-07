@@ -320,6 +320,55 @@
             .cta-box h2 { font-size: 2rem; }
             .btn-container { flex-direction: column; }
         }
+
+        /* --- "Explore Skills" Section Styles --- */
+        .explore-skills {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #00f2fe, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        .step-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(168, 85, 247, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .step-number {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #00f2fe;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .step-card p {
+            font-size: 1rem;
+            color: #b3b8d4;
+            line-height: 1.6;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -345,25 +394,25 @@
     </section>
 
     <!-- How It Works Section -->
-    <section class="Explore Skills">
-        <h2 class="section-title">How It Works</h2>
+    <section class="explore-skills">
+        <h2 class="section-title">Explore Skills</h2>
         <div class="steps-grid">
             
             <!-- Step 1 -->
             <div class="Stickhandling">
-                <span class="step-number">[ 1. Host Sync ]</span>
+                <span class="step-number">[ 1. Stickhandling ]</span>
                 <p>Players learn stickhandling skills & drills and when to use them in games.</p>
             </div>
 
             <!-- Step 2 -->
             <div class="Skating">
-                <span class="step-number">[ 2. Guest Check-In ]</span>
+                <span class="step-number">[ 2. Skating ]</span>
                 <p>Players are taught skating exercises that strengthen their lower body and improve performance on ice.</p>
             </div>
 
             <!-- Step 3 -->
             <div class="Shooting">
-                <span class="step-number">[ 3. Instant Support ]</span>
+                <span class="step-number">[ 3. Shooting ]</span>
                 <p>Players learn shooting mechanics and timing that allow them to score more goals.</p>
             </div>
 
