@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contributor Profile - Daiwik Anand</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent: #0284c7;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+        }
+
+        .profile-header {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 32px;
+            margin-bottom: 32px;
+        }
+
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            flex-shrink: 0;
+        }
+
+        .profile-title h1 {
+            margin: 0 0 6px 0;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        .role {
+            font-size: 16px;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .tagline {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin: 0;
+            font-style: italic;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            color: var(--text-main);
+        }
+
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .info-block {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .info-block ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .info-block li {
+            margin-bottom: 8px;
+        }
+
+        .info-block li:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            background-color: #fafafa;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .links {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 20px 12px;
+            }
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-card">
+            
+            <!-- Header Section -->
+            <div class="profile-header">
+                <!-- Expecting image 'image_kFRUXL.png' in the same local directory -->
+                <img src="daiwik.png" alt="Daiwik Anand" class="avatar">
+                <div class="profile-title">
+                    <div class="role">Contributor</div>
+                    <h1>Daiwik Anand</h1>
+                    <p class="tagline">Bridging the intersection of technology and sports performance.</p>
+                </div>
+            </div>
+
+            <!-- Focus & Core Interest -->
+            <div class="section">
+                <h2>About & Vision</h2>
+                <p style="color: #334155; margin: 0;">
+                    Daiwik is deeply driven by how modern technology can transform athletic performance and development. By combining engineering concepts with practical athletic experience, he aims to democratize access to elite sports training resources globally.
+                </p>
+            </div>
+
+            <!-- Background Grid -->
+            <div class="grid">
+                <div class="info-block">
+                    <h2>Athletic Background</h2>
+                    <ul>
+                        <li><strong>10+ Years</strong> playing competitive ice hockey</li>
+                        <li><strong>5 Years</strong> playing at the Tier level</li>
+                        <li><strong>International</strong> playing experience</li>
+                    </ul>
+                </div>
+                
+                <div class="info-block">
+                    <h2>Coaching Experience</h2>
+                    <ul>
+                        <li><strong>4 Years</strong> of dedicated coaching</li>
+                        <li>Brief coaching stint at the <strong>SECMOL Institute</strong> in Ladakh, India</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Featured Project -->
+            <div class="section">
+                <h2>Featured Project</h2>
+                <div class="project-card">
+                    <div class="project-title">Zamboni AI</div>
+                    <p style="margin: 0 0 12px 0; color: var(--text-muted); font-size: 15px;">
+                        An innovative application designed to deliver free, high-quality, remote ice hockey training modules directly to athletes worldwide, reducing traditional geographic and financial barriers to player development.
+                    </p>
+                    <div class="links">
+                        <a href="#" class="btn btn-primary">Explore Zamboni AI</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
